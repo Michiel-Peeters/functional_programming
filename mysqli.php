@@ -43,14 +43,6 @@ if ( $result->num_rows > 0 )
         print "<td>" . $row["det_txt_fr"] . "</td>";
         print "<td>" . $row["det_cases"] . "</td>";
 
-        if ( $row["det_image"] > "" ) {
-            $afbeeldingslink = "<img src=" . $row["det_image"] . " />";
-        }
-        else {
-            $afbeeldingslink = null;
-        }
-
-        print "<td>$afbeeldingslink</td>";
 
         print "</tr>";
     }
