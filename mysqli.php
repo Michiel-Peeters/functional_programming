@@ -54,7 +54,5 @@ else
 
 print "</table>";
 
-HaliHalo();
-
 $conn->close();
 ?>
