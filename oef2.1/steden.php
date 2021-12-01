@@ -25,11 +25,12 @@
 <body>
 
 <?php
-$afbeeldingen = [
-    "londen" => "london.jpg",
-    "parijs" => "parijs.jpg",
-    "berlijn" => "berlijn.jpg",
-]
+
+/*define and execute query
+$sql = "select * from images";
+$result = $conn->query($sql);
+*/
+
 ?>
 
 <div class="jumbotron text-center">
@@ -40,12 +41,14 @@ $afbeeldingen = [
 <div class="container">
     <div class="row">
         <?php
-        foreach ($afbeeldingen as $stad => $foto) {
+        include "getdata.php";
+        foreach (getData("select * from images","steden") as $row) {
             print "<div class='col-sm-4'>";
-            print "<h3>".ucfirst($stad)."</h3>";
+            print "<h3>" . $row["img_title"] . "</h3>";
+            print "<p>" . $row["img_width"] . " x " . $row["img_height"];
             print "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>";
             print "<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>";
-            print "<img src=img/$foto width='300' height='300'>";
+            print "<img src=img/" . $row["img_filename"] . " width='300' height='300'>";
             print "</div>";
         }
         ?>

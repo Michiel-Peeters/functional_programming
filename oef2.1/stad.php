@@ -24,32 +24,21 @@
 </head>
 <body>
 
+<div class="jumbotron text-center">
+    <h1>Detail Stad</h1>
+</div>
+
 <?php
-$afbeeldingen = [
-    "londen" => "london.jpg",
-    "parijs" => "parijs.jpg",
-    "berlijn" => "berlijn.jpg",
-]
+include "getdata.php";
+foreach (getData("select * from images where img_id = " . $_GET["img_id"], "steden") as $detail){
+    print "<h1>" . $detail["img_title"] . "</h1>";
+    print "<p>filename: " . $detail["img_filename"] . "</p>";
+    print "<p>" . $detail["img_width"] . " x " . $detail["img_height"] . " pixels</p>";
+    print "<img src=img/" . $detail["img_filename"]. "><br>";
+    print "<a href='steden2.php'>Terug naar overzicht</a>";
+}
 ?>
 
-<div class="jumbotron text-center">
-    <h1>Leuke plekken in Europa</h1>
-    <p>Resize this responsive page to see the effect!</p>
-</div>
 
-<div class="container">
-    <div class="row">
-        <?php
-        foreach ($afbeeldingen as $stad => $foto) {
-            print "<div class='col-sm-4'>";
-            print "<h3>".ucfirst($stad)."</h3>";
-            print "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>";
-            print "<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>";
-            print "<img src=img/$foto width='300' height='300'>";
-            print "</div>";
-        }
-        ?>
-    </div>
-</div>
 </body>
 </html>
