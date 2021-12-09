@@ -1,13 +1,14 @@
 <?php
 include "getdata.php";
+include "html_components.php";
 printHead()
 ?>
 
 <body>
-<div class="jumbotron text-center">
-    <h1>Leuke plekken in Europa</h1>
-    <p>Resize this responsive page to see the effect!</p>
-</div>
+
+<?php
+printJumbo("mooiste steden van europa","cool");
+?>
 
 <div class="container">
     <div class="row">

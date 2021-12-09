@@ -1,13 +1,15 @@
 <?php
 include "getdata.php";
+include "html_components.php";
  printHead()
 ?>
 
 <body>
 
-<div class="jumbotron text-center">
-    <h1>Detail Stad</h1>
-</div>
+<?php
+printJumbo("stad","");
+?>
+
 
 <?php
 

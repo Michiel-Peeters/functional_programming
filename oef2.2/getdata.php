@@ -13,6 +13,5 @@ function getData($query, $dbname)
     return $result;
 }
 
-function printHead(){
-   print file_get_contents("./templates/head.html");
-}
+
+
