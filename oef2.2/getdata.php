@@ -12,3 +12,7 @@ function getData($query, $dbname)
     $conn->close();
     return $result;
 }
+
+function printHead(){
+   print file_get_contents("./templates/head.html");
+}
